@@ -1,0 +1,342 @@
+/* CSS Variables untuk kemudahan kustomisasi */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #343a40;
+    --light-text-color: #ffffff;
+    --card-bg-color: #ffffff;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* Reset dan Pengaturan Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navigasi */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--card-bg-color);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Section Umum */
+section {
+    padding: 5rem 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Override min-height untuk section yang tidak perlu 1 layar penuh */
+#about,
+#experience,
+#education,
+#contact,
+.footer {
+    min-height: auto;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/satu.jpg') no-repeat center center/cover;
+    color: var(--light-text-color);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.typing-effect {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Tombol */
+.btn {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 0.8rem 1.6rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Tentang Saya Section */
+#about {
+    background-color: var(--card-bg-color);
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 900px;
+    text-align: justify;
+}
+
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 10%;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+    flex-shrink: 0;
+}
+
+/* ============================ */
+/* PENGALAMAN & PENDIDIKAN      */
+/* ============================ */
+
+#experience {
+    background-color: var(--card-bg-color);
+}
+
+#education {
+    background-color: var(--background-color);
+}
+
+/* Container Pengalaman (Satu Kolom) */
+.experience-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Container Pendidikan (Grid Fleksibel) */
+.education-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1100px;
+}
+
+/* Kartu Pengalaman */
+.experience-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    text-align: left;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* Kartu Pendidikan */
+.education-card {
+    width: 300px;
+    background-color: #ffffff;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Styling untuk Logo */
+.company-logo,
+.school-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: contain;
+    border: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+.school-logo {
+    margin-bottom: 1.5rem;
+    /* Jarak logo ke teks di bawahnya */
+}
+
+/* Styling untuk Detail Teks */
+.experience-details,
+.education-details {
+    flex: 1;
+}
+
+.experience-card h3,
+.education-card h3 {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.experience-card .company,
+.education-card .school {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.experience-card ul {
+    list-style-position: inside;
+    padding-left: 0.5rem;
+}
+
+.experience-card ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* ============================ */
+/* KONTAK & FOOTER              */
+/* ============================ */
+
+#contact {
+    background-color: var(--card-bg-color);
+}
+
+/* Styling untuk bagian Kontak yang baru */
+
+
+.footer {
+    background-color: var(--text-color);
+    color: var(--light-text-color);
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+.footer .fa-heart {
+    color: red;
+}
+
+/* ============================ */
+/* SOSIAL IKON DI FOOTER        */
+/* ============================ */
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    /* Jarak antar ikon */
+    margin-bottom: 1rem;
+    /* Jarak ke teks copyright di bawahnya */
+}
+
+.social-icons a {
+    color: var(--light-text-color);
+    /* Menggunakan warna teks terang dari variabel */
+    font-size: 1.5rem;
+    /* Ukuran ikon */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+    /* Warna ikon berubah saat disentuh mouse */
+    transform: translateY(-3px);
+    /* Ikon sedikit terangkat saat disentuh mouse */
+}
+
+/* ============================ */
+/* MEDIA QUERIES (RESPONSIVE)   */
+/* ============================ */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* Sembunyikan link nav, siapkan untuk menu hamburger */
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .experience-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .experience-card ul {
+        text-align: left;
+        /* Biarkan list tetap rata kiri agar mudah dibaca */
+    }
+
+    .education-card {
+        width: 90%;
+        /* Buat kartu pendidikan lebih lebar di layar kecil */
+    }
+}
